@@ -1,0 +1,35 @@
+body{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a9e4f7+0,0fb4e7+100;Ble+3D+%235 */
+background: #a9e4f7; /* Old browsers */
+background: -moz-linear-gradient(top,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #a9e4f7 0%,#0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+font-size: 1em;
+}
+
+.btn-Submit{
+  background-color: rgb(230, 81, 81);
+  border: none;
+  font-size: 2em;
+  font-family: Quicksand, sans-serif;
+}
+
+
+.center{
+    text-align: center;
+    border-color: black;
+    border: 4px solid #a641a1;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.right{
+    float: right;
+    width: 30%;
+}
+
+.left {
+    float: left;
+    width: 60%;
+}
