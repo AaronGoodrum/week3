@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <body onload="check_user_age()" style="position: absolute">
+       <h1>Spiritueux Wines and Liquors</h1>
+       <script>
+           function check_user_age(){
+               if (age_of_user() <18)
+               alert("You are too young to buy alcohol.")
+               if (check_user_email().includes("@") == true){
+                alert("Enter a valid email.")
+               } else {
+                alert("non-valid email enter.")
+               };
+           }
+           function age_of_user(){
+               var age = prompt("What is your age?");
+               return age;
+           }
+           function check_user_email(){
+               var email = prompt("What is your email?");
+               return email;
+           }
+       </script>
+   </body>
+</html>

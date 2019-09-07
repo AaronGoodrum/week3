@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="myList"></div>
+    </body>
+    <script type="text/javascript">
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		var ul = document.createElement('ul');
+        document.getElementById('myList').appendChild(ul);
+		fruits.forEach(function(name){
+			var li = document.createElement('li');
+			ul.appendChild(li);
+			li.innerHTML += name;
+		});
+	alert("This is the resulting Array using am HTML List: " + document.getElementById('myList').innerText);
+		</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Guess a Color Game</title>
+</head>
+
+<body onload="do_game()">
+    <h1> Hello </h1>
+</body>
+<script>
+    //
+    var target_index
+    var color_array;
+    var guess_input;
+    var guesses = 0;
+    var finished = false;
+
+    //
+    color_array = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+
+    // do setup
+    function do_game() {
+
+        var random_number = Math.random() * color_array.length
+        var random_number_interget = Math.floor(random_number);
+
+        target_index = random_number_interget
+        target_text = color_array[target_index];
+
+        console.log(random_number_interget);
+        while (!finished) {
+            guess_input_text = prompt(" I am thinking of color in this list \n\n"
+                + color_array.join(" , ") +
+                "\n\n What color am I thinking of?")
+            guess_input = (guess_input_text).toLowerCase()
+            // number guesses
+            guesses += 1;
+
+            finished = check_guess();
+        }
+
+
+        function check_guess() {
+            //check guess_input to target_text
+            console.log(guess_input_text + " " + target_text)
+
+            if (color_array.indexOf(guess_input) == -1) {
+                alert(" Sorry I don't recognize your color. \n\n" +
+                    "Please try again.");
+                return false
+            }
+            if (guess_input < target_text) {
+                alert("Sorry your guess is incorrect!\n\n Hint: your color is alphabetically higher than mine \n\n Please try again.");
+                return false;
+            }
+            if (guess_input > target_text) {
+                alert("Sorry your guess is incorrect!\n\n Hint: your color is alphabetically lower than mine \n\n Please try again.");
+                return false;
+            }
+            document.body.style.backgroundColor = guess_input;
+            alert("Congratulations! You have guessed the color " + target_text +
+                ".\n\nIt took you " + guesses +
+                " guesses to finish the game! \n\n You can see the color in the background.");
+            return true
+        }
+    }
+
+
+</script>
+
+</html>
