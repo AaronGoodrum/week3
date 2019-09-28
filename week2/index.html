@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guessing Game</title>
+</head>
+
+<body onload="do_game()">
+    <script>
+        function do_game() {
+            var target;
+            var randomColor;
+            var finished = false;
+
+
+            var colors = ["blue", "green", "orange", "purple", "red", "yellow"];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+
+
+            while (!finished) {
+                
+                guess_input_text = prompt("I am thinking of one of these colors. \n\n" + "blue, green, orange, purple, red, yellow. \n\n" + "What color am I thinking of...");
+                target = randomColor
+                guess_input = (guess_input_text).toLowerCase
+
+                finished = check_guess()
+
+
+               function check_guess() {
+
+                if(colors.indexOf(guess_input) == -1){
+                    alert("sorry I don't recognize your color")
+
+                    return false
+                }
+
+                if (guess_input > target) {
+                    alert("Your guess is too high!")
+
+                    return false;
+                }
+                if (guess_input < target) {
+                    alert("Your guess is too low!")
+
+                    return false;
+                }
+                else if (guess_input === target) {
+                    alert("Hurray!" )
+
+                    //finished = true;
+                    document.body.style.backgroundColor = guess_input
+                    return true;
+                }
+            }
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

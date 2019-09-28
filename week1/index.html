@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dating Website!</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        /* body {
+            background: rgb(2, 0, 36);
+            background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 118, 121, 1) 46%, rgba(0, 212, 255, 1) 100%);
+        }
+
+        h1 {
+            color: white;
+        }
+
+        fieldset {
+            background-color: lightyellow;
+            border: 10px solid lightblue;
+            margin-bottom: 10px;
+            width: 520px
+        }
+
+        label {
+            width: 180px;
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        label:hover,
+        input:hover {
+            font-size: 20px;
+        }
+
+        .box_radio {
+            width: auto;
+            text-align: right;
+            vertical-align: text-top
+        }
+
+        .lRange {
+            text-align: center;
+            vertical-align: top;
+            background-color: darkred;
+            color: white;
+            width: 60px;
+            display: inline-block;
+        }
+
+        .rRange {
+            text-align: center;
+            vertical-align: top;
+            background-color: purple;
+            color: white;
+            width: 60px;
+            display: inline-block;
+        } */
+
+        .previewImg {
+            max-width: 250px;
+            max-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Please Enter Your Details For Our Dating Website </h1>
+    <form action="https://learn.nucamp.co/show_everything.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend> Your Face</legend>
+            <!-- input type="file" [required] with a name=“avatar” and an id=”avatar” with the label “Your Image:” -->
+            <div>
+                <label for="avatar"> Your Image: </label>
+                <input type="file" name="avatar" id="avatar" required >
+            </div>
+
+            <!-- An img element with id="preview" with the label “Image Preview:”-->
+            <label for="preview"> Image Preview: </label>
+            <img  class="previewImg" id="preview" name="preview">
+
+        </fieldset>
+
+        <fieldset>
+            <legend> Your General Details</legend>
+            <!-- input type= "text"  [required] with a name=“name” and id=”name” with the label “Name:” -->
+            <div>
+                <label for="name"> Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <!-- input type="radio" (two of these) [required] with name=“gender” but with two different id and values (male and female) -->
+            <div>
+                <label for="gender"> Gender: </label>
+                <input type="radio" id="genderMale" name="gender" value="male"> <label for="genderMale"
+                    class="box_radio"> Male </label>
+                <input type="radio" id="genderFemale" name="gender" value="female" required> <label for="genderFemale"
+                    class="box_radio"> Female </label>
+                <input type="radio" id="genderOther" name="gender" value="other"><label for="genderOther"
+                    class="box_radio"> Other </label>
+            </div>
+
+            <!-- input type="number" [required] with name=“age” and id=”age” and a label -->
+            <div>
+                <label for="age"> Age:</label>
+                <input type="number" id="age" name="age" placeholder="18" required>
+            </div>
+
+            <!-- input type="date" with name=“dob” and id=”dob” and a label -->
+            <div>
+                <label for="dob"> Date of birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <!-- input type="color" with name=“color” and id=”color” and a label -->
+            <div>
+                <label for="color"> Favorite color:</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <!-- select, with 6 option , to handle ‘no selection’ plus 5 different countries  -->
+            <div>
+                <label for="countries"> Which country:</label>
+                <select id="countries" name="countries">
+                    <option value="none"></option>
+                    <option value="us">United States</option>
+                    <option value="mx">Mexico</option>
+                    <option value="cn">China</option>
+                    <option value="uk">England</option>
+                    <option value="fr">France</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Your Indicators</legend>
+            <div>
+                <!-- input type="range" min="0" max="100". 
+                Use a combination of Label <label> and Span <span> for the indicator text -->
+                    <label for="height"> Height : </label>
+                <span class="lRange"> Short </span>
+                <input type="range" min="0" max="100" step="5" value="50" id="height" name="height">
+                <span class="rRange"> Tall </span>
+            </div>
+
+            <!-- input type="range" min="0" max="100". 
+                Use a combination of Label <label> and Span <span> for the indicator text -->
+            <label for="salary"> Salary : </label>
+            <span class="lRange"> Poor </span>
+            <input type="range" min="0" max="100" step="5" value="50" id="salary" name="salary">
+            <span class="rRange"> Rich </span>
+        </fieldset>
+
+        <fieldset>
+            <legend> Your Content Information</legend>
+            <div>
+                <!-- input type="email" [required] with name=“email” and id=”email” and a label -->
+                <label for="email"> Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <!-- input type="tel" with name=“mobile” and id=”mobile” and a label -->
+                <label for="mobile"> Mobile:</label>
+                <input type="tel" id="mobile" name="mobile">
+            </div>
+            <div>
+                <!-- textarea with name=“address”, id=”address”  20 columns, 3 rows and a label -->
+                <label for="address"> Address:</label>
+                <textarea cols="20" id="address" name="address"> </textarea>
+            </div>
+
+            <!-- input type="checkbox" ... , three of these are needed for the three types of contact method -->
+            <div>
+                <label for="contact"> Method to contact you: </label>
+                <input type="checkbox" id="contactEmail" name="contact" value="email"> <label class="box_radio"
+                    for="email"> Email </label>
+                <input type="checkbox" id="contactApp" name="contact" value="whatsapp"> <label class="box_radio"
+                    for="whatsapp"> Whatsapp </label>
+                <input type="checkbox" id="contactChat" name="contact" value="inappchat"> <label class="box_radio"
+                    for="inappchat"> In-app chat </label>
+            </div>
+        </fieldset>
+
+        <input type="submit">
+    </form>
+
+    <script src="https://url.nucamp.co/datingjs"></script>
+</body>
+
+</html>

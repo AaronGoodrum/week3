@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dating Website</title>
+    <meta charset="UTF-8">
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+    fieldset {
+        background: lightgray;
+        border: 10px solid green;
+        margin-bottom: 10;
+        width: 720px
+    }
+
+    label {
+        width: 180px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top
+    }
+
+    label:hover {
+        font-size: 20px
+    }
+
+    input:hover {
+        font-size: 25px
+    }
+
+    .lRange {
+        text-align: center;
+        background-color: goldenrod;
+        display: inline-block;
+        width: 50px
+    }
+
+    .rRange {
+        text-align: center;
+        background-color: greenyellow;
+        display: inline-block;
+        width: 50px
+    }
+</style>
+
+
+<body>
+    <!--Input Image and Display Preview-->
+    <form action="https://learn.nucamp.co/show_everything.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your Face</legend>
+
+            <label for="avatar">Your Image:</label>
+            <input type="file" name="avatar" id="avatar" required><br>
+            <label for="preview">Image Preview:</label>
+            <img class="previewImg" id="preview" name="preview">
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Your General Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" [required] name="name" id="name" label="name" placeholder="Your Full Name"><br>
+            <!--Gender-->
+            <label for="Gender">Gender:</label>
+            <input type="radio" name="gender" value="Male" id="genderofMale" label="Male" required> Male
+            <input type="radio" name="gender" value="Female" id="genderofFemale" required>Female<br>
+            <!--Age, D.O.B, Color, Color, Countries-->
+            <label for="Age">Age:</label>
+            <input type="number[required]" name="age" id="age" id="age" label="age" required><br>
+            <label for="Date of Birth">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" label="dob" required><br>
+            <label for="color">Favorite Color:</label>
+            <input type="color" name="color"><br>
+            <label for="country">Which country:</label>
+            <select name="country" id="country" handle no selection>
+                <option value="us">United States</option>
+                <option value="br">Brazil</option>
+                <option value="sk">Slovakia</option>
+                <option value="mc">Macedonia</option>
+                <option value="gr">Greenland</option>
+                <option value="nn">Narnia</option>
+            </select>
+        </fieldset><br>
+
+        <fieldset>
+            <!--Height and Salary-->
+            <legend>Your Indicators</legend>
+            <div><label for="Height" width auto>Height:</label><span class="lRange">
+                    Short</span><input type="range" name="height" min="0" max="100" step=5 label="height" value="50" id="
+                Height">
+                <span class="rRange">
+                    Tall</span></div><br>
+            <div><label for="Salary" width auto>Salary:</label><span class="lRange">
+                    Poor</span><input type="range" name="salary" min="0" max="100" step="5" label="salary" value="50"
+                    id="salary">
+                <span class="rRange">Rich</span></div>
+        </fieldset><br>
+
+        <fieldset>
+            <!--Contact Information-->
+            <legend>Your Contact Information</legend>
+            <label for="Email">Email:</label><input type="email[required" name="email" id="email" label for="Email"><br>
+            <label for="Mobile">Mobile:</label><input type="tel" name="mobile" id="mobile" label for="Mobile"><br>
+            <label for="Address">Address:</label><textarea name="address" id="address" cols="20"
+                rows="3"></textarea><br>
+            <label for="contact">Method to Contact You:</label>
+            <input type="checkbox" name="Email" value="contact" id="contactEmail" ; width="auto" value="Email">Email
+            <input type="checkbox" name="Whatsapp" value="contact" id="contactWhatsapp" label width="auto"
+                value="Whatsapp">Whatsapp
+            <input type="checkbox" name="In-app chat" value="contact" id="contactInapp" label width="auto"
+                value="In-app">In-app chat
+        </fieldset><br>
+        <input type="submit">
+    </form>
+    <script src="https://url.nucamp.co/datingjs"></script>
+</body>
+
+</html>

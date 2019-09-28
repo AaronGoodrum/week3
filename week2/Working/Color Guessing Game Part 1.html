@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Guess a Color Game</title>
+</head>
+<body onload="do_game()">
+    <script>
+        var color_array;
+        var guess_input;
+        var guesses = 0;
+        var finished = false;
+
+        color_array = ["Azure", "Beige", "Blue", "Brown"];
+        
+        function do_game() {
+            var random_number = Math.floor(Math.random() * color_array.length);
+            target_text = color_array[random_number];
+
+            while (!finished) {
+                guess_input_text = prompt("I am thinking of a color in this list \n\n" +
+                    color_array.join(", ") +
+                    "\n\n What color am I thinking of?");
+                guesses += 1;
+                if (guess_input_text == target_text) {
+                    finished = true;
+                    document.body.style.backgroundColor = guess_input;
+                    alert("Congratulations! You have guessed the color " + target_text +
+                        ".\n\nIt took you " + guesses +
+                        " guesses to finish the game! \n\n You can see the color in the background.");
+                }
+         
+            }
+        }
+    </script>
+</body>
+</html>

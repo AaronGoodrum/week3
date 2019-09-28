@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Guessing Game</title>
+    <meta charset="UTF-8">
+</head>
+<body onload="do_game()">
+    <script>
+        var target;
+        var guess_input;
+        var finished = false;
+        var guesses = 0;
+        var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+        var sorry_msg = "Sorry, your guess is not correct! \n\n"
+        var try_msg = "\n\n Please try again."
+
+        var user_name;
+        user_name=prompt("What is your name?");
+        document.write("Welcome to my page " + user_name + "!" );
+
+        function do_game() {
+            var random_number = Math.random() * colors.length;
+            var random_number_int = Math.floor(random_number);
+            target = colors[random_number_int];
+            alert("The color to guess is: " + target);
+
+            while (!finished) {
+                guess_input = prompt("I am thinking of one of these colors: \n\n" + 
+                                colors.join(", ") + "\n\n" + "What color am I thinking of?");
+                guesses += 1;
+                finished = check_guess();
+            }
+        }
+
+        function check_guess() {
+            if (colors.indexOf(guess_input) == -1) {
+                alert("Sorry, I don't recognize your color. \n\n" + try_msg);
+                return false;
+            }
+            if (guess_input > target) {
+                alert(sorry_msg + "Hint: your color is alphabetically higher than mine." + try_msg);
+                return false;   
+            }
+            if (guess_input < target) {
+                alert(sorry_msg + "Hint: your color is alphbetically lower than mine." + try_msg);
+                return false;
+            }
+            myBody = document.getElementsByTagName("body")[0];
+            myBody.style.background = target;
+            setTimeout(function() {alert("Congratulations! You have guessed the color! \n\n" +
+                "It took you " + guesses + " guesses to finish the game! \n\n" + 
+                "You can see the color in the background.")}, 100);
+            return true;
+        }
+    </script>
+</body>
+</html>

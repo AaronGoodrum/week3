@@ -1,0 +1,62 @@
+body {
+    background: rgb(2, 0, 36);
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 118, 121, 1) 46%, rgba(0, 212, 255, 1) 100%);
+}
+
+h1 {
+    color: white;
+}
+
+fieldset {
+    background-color: rgb(187, 174, 200);
+    border: 10px solid lightblue;
+    margin-bottom: 10px;
+    width: 520px
+}
+
+label {
+    width: 180px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+label:hover,
+input:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.box_radio {
+    width: auto;
+    text-align: right;
+    vertical-align: text-top
+}
+
+.lRange {
+    text-align: center;
+    vertical-align: top;
+    background-color: darkred;
+    color: white;
+    width: 60px;
+    display: inline-block;
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.rRange {
+    text-align: center;
+    vertical-align: top;
+    background-color: purple;
+    color: white;
+    width: 60px;
+    display: inline-block;
+}
+
+input {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+input:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
